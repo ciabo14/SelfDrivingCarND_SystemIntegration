@@ -54,14 +54,19 @@ class DBWNode(object):
                                          BrakeCmd, queue_size=1)
 
         # TODO: Create `TwistController` object
-        # self.controller = TwistController(<Arguments you wish to provide>)
-
+        self.controller = TwistController(w_b = wheel_base, s_r = steer_ratio, m_s = min_speed, m_l_a = max_lat_accel, m_s_a = max_steer_angle)
         # TODO: Subscribe to all the topics you need to
+
+		rospy.Subscriber('/target_velocity', TwistStamped, self.current_velocity_cb)
+		rospy.Subscriber('/twist_cmd', TwistStamped, self.twist_cmd_cb)
+		rospy.Subscriber('/dbw_enabled', Bool, self.dbw_enabled_cb)
 
         self.loop()
 
     def loop(self):
+
         rate = rospy.Rate(50) # 50Hz
+
         while not rospy.is_shutdown():
             # TODO: Get predicted throttle, brake, and steering using `twist_controller`
             # You should only publish the control commands if dbw is enabled
@@ -72,6 +77,25 @@ class DBWNode(object):
             #                                                     <any other argument you need>)
             # if <dbw is enabled>:
             #   self.publish(throttle, brake, steer)
+	
+			# EAFP approach to attributes access. The access to self.dbw_en, self.twist_cmd and self.current_velocity will throw an exception if these values were never populated (messages never sent in the topics) 
+			try:
+				# Execute the controller routin only if the dbw_enable signal is == True
+				if(self.dbw_en):
+					
+					parameters = {'twist_cmd': self.twist_cmd,
+								  'current_velocity': self.current_velocity}
+					
+
+					controls = controller.control(**parameters)
+					self.publish(controls["throttle"], controls["brake"], controls["steer"])
+				# If dbw_enable==False, the car is controlled by the driver and the controller need to be resetted.
+				else:
+					controller.reset()
+			except AttributeError:
+				pass 
+			
+
             rate.sleep()
 
     def publish(self, throttle, brake, steer):
@@ -92,6 +116,15 @@ class DBWNode(object):
         bcmd.pedal_cmd = brake
         self.brake_pub.publish(bcmd)
 
+
+	def dbw_enabled_cb(self, dbw_en):
+		self.dbw_en = dbw_en
+
+	def twist_cmd_cb(self, vel):
+		self.twist_cmd_cb = vel
+
+	def current_velocity_cb(self, vel):
+		self.current_vel = vel
 
 if __name__ == '__main__':
     DBWNode()
