@@ -48,47 +48,65 @@ class WaypointUpdater(object):
 		rospy.spin()
 
 	def pose_cb(self, msg):
-		print("Reading current car pose",msg.pose.position.x,msg.pose.position.y)
+
+		#print("Reading current car pose",msg.pose.position.x,msg.pose.position.y)
+
 		if(self.vehicle == None):
-			print("Creating Vehicle")
+
+			#print("Creating Vehicle")
+			
 			self.vehicle = Vehicle(msg.pose.position)
 		else:
-			print("Update vehicle position")
+			
+			#print("Update vehicle position")
+			
 			self.vehicle.update_vehicle_pos(msg.pose.position)
 		if(self.track != None and len(self.track.waypoints) > 0):
-			print("Computing new wps")
+
+			#print("Computing new wps")
+
 			# Define and initialize the Lane message to be sent back to the final_waypoints topic
 			lane = Lane()
 			lane.header.stamp = rospy.Time().now()
 			# lane.header.frame_id = "/world"
 			self.compute_next_wps(lane)
-			print("LANE WPS LENGHT: ", len(lane.waypoints))
-			print("WP speed: ", lane.waypoints[0].twist.twist.linear.x)
+
+			#print("LANE WPS LENGHT: ", len(lane.waypoints))
+			#print("WP speed: ", lane.waypoints[0].twist.twist.linear.x)
+
 			self.final_waypoints_pub.publish(lane)
 
 	def waypoints_cb(self, waypoints):
 
 		if(self.track == None):
 			self.track = Track(waypoints.waypoints)
-			print("Track Creation",len(self.track.waypoints))
+
+			#print("Track Creation",len(self.track.waypoints))
+
 		# Defined to update the waypoints in case some messages arrives before the simulatro was started
 		elif(len(waypoints.waypoints) != len(self.track.waypoints)):
 			self.track.waypoints = waypoints.waypoints
-			print("Track already created",len(self.track.waypoints))
+
+			#print("Track already created",len(self.track.waypoints))
 
 	def compute_next_wps(self,lane):
 		next_wps = []
 		
 		if(self.last_wp_index == -1):
-			print("Look throw all the wps")
+
+			#print("Look throw all the wps")
+
 			self.last_wp_index = self.compute_close_wp()
 		else:
 			min_index = (self.last_wp_index - LOOKBACK_WPS) % len(self.track.waypoints)
 			max_index = (self.last_wp_index + LOOKAHEAD_WPS) % len(self.track.waypoints)
-			print("Look throw indexs: ",min_index, max_index)
+
+			#print("Look throw indexs: ",min_index, max_index)
+
 			self.last_wp_index = self.compute_close_wp_range(min_index,max_index)
 		
-		print("Closest wp index: ",self.last_wp_index)
+		#print("Closest wp index: ",self.last_wp_index)
+		
 		# Add all the LOOKAHEAD_WPS waypoints to the Lane message to be sent back
 		for i in range(1,LOOKAHEAD_WPS):
 			wp = self.track.waypoints[(self.last_wp_index+i) % len(self.track.waypoints)]
