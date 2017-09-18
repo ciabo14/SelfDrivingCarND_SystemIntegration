@@ -3,6 +3,7 @@
 import rospy
 from geometry_msgs.msg import PoseStamped
 from styx_msgs.msg import Lane, Waypoint
+from styx_msgs.srv import ChangeTargetSpeed
 import sys
 import math
 from track import *
@@ -29,6 +30,8 @@ LOOKBACK_WPS = 100 # Number of waypoints will be checked to find the close wp to
 class WaypointUpdater(object):
 	def __init__(self):
 		rospy.init_node('waypoint_updater')
+		
+		service = rospy.Service('~change_Epeed', ChangeTargetSpeed, self.pippo)
 
 		rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
 		rospy.Subscriber('/base_waypoints', Lane, self.waypoints_cb)
@@ -47,6 +50,8 @@ class WaypointUpdater(object):
 
 		rospy.spin()
 
+	def pippo(self,msg):
+		return ChangeTargetSpeedResponse(True)
 	def pose_cb(self, msg):
 
 		#print("Reading current car pose",msg.pose.position.x,msg.pose.position.y)

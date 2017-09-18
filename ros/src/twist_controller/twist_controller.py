@@ -13,14 +13,14 @@ class Controller(object):
 	def __init__(self, *args, **kwargs):
 		
 		# Define the 2 PIDs: one for the throttle/brake control, the second one for the steering
-		self.pid_control = PID(1,0.001,0.1)
-		self.pid_steering = PID(1,0.001,0.1)
+		self.pid_control = PID(1, .01, .001)
+		self.pid_steering = PID(2 ,.01, .001)
 
 		# Define the low pass filter to be applied to steering error value
 		self.lpf_steer_error = LowPassFilter(0.2, 0.1)
 
 		self.yaw_controller = YawController(kwargs["wheel_base"], kwargs["steer_ratio"], kwargs["min_speed"], kwargs["max_lat_accel"], kwargs["max_steer_angle"])
-
+		self.brake_deadband = kwargs["brake_deadband"]
 		self.time = None
 		pass
 
@@ -60,7 +60,9 @@ class Controller(object):
 				if(brake < self.brake_deadband):
 					brake = 0.0
 			
-				steer = self.pid_steer.step(steer_err, delta_t)
+				steer = self.pid_steering.step(steer_err, delta_t)
+				rospy.loginfo('Current PIDs target data:')
+				rospy.loginfo('SpeedCurrent -> %f, SpeedTarget --> %f, SteerCurrent -> %f, SteerTarget --> %f', current_lin_vel, target_lin_vel, current_steer, target_steer)
 
 				self.time = current_time
 

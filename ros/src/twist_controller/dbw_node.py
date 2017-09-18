@@ -55,7 +55,7 @@ class DBWNode(object):
 		self.throttle_pub = rospy.Publisher('/vehicle/throttle_cmd', ThrottleCmd, queue_size=1)
 		self.brake_pub = rospy.Publisher('/vehicle/brake_cmd', BrakeCmd, queue_size=1)
 
-		params = {"wheel_base": wheel_base, "steer_ratio": steer_ratio, "min_speed": min_speed, "max_lat_accel": max_lat_accel, "max_steer_angle": max_steer_angle}
+		params = {"wheel_base": wheel_base, "steer_ratio": steer_ratio, "min_speed": min_speed, "max_lat_accel": max_lat_accel, "max_steer_angle": max_steer_angle, "brake_deadband": brake_deadband}
 
 		self.controller = Controller(**params)
 
@@ -81,10 +81,11 @@ class DBWNode(object):
 				parameters = {'twist_cmd': self.twist_cmd,
 							  'current_vel': self.current_velocity}
 				
-				#throttle, brake, steer = self.controller.control(**parameters)
+				throttle, brake, steer = self.controller.control(**parameters)
 
 				#self.publish(throttle, brake, steer)
-				self.publish(5.0, 0.0, 0.0)
+				self.publish(throttle, brake, 0.0)
+				#self.publish(5.0, 0.0, 0.0)
 			# If dbw_enable==False, the car is controlled by the driver and the controller need to be resetted.
 			else:
 				self.controller.reset()
@@ -116,7 +117,7 @@ class DBWNode(object):
 
 
 	def dbw_enabled_cb(self, dbw_en):
-		#print("Received dbw command")
+		print("Received dbw command")
 		self.dbw_en = dbw_en
 
 	def twist_cmd_cb(self, twist):
