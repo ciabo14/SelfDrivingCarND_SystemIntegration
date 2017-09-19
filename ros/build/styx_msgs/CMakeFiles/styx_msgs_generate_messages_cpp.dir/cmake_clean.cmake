@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/include/styx_msgs/TrafficLight.h"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/include/styx_msgs/Lane.h"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/include/styx_msgs/TrafficLightArray.h"
-  "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/include/styx_msgs/ChangeTargetSpeed.h"
 )
 
 # Per-language clean rules from dependency scanning.

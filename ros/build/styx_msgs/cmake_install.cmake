@@ -42,10 +42,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/styx_msgs/srv" TYPE FILE FILES "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/srv/ChangeTargetSpeed.srv")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/styx_msgs/cmake" TYPE FILE FILES "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/styx_msgs/catkin_generated/installspace/styx_msgs-msg-paths.cmake")
 endif()
 

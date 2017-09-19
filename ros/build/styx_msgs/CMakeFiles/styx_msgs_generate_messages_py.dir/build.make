@@ -57,9 +57,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfD
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py
 
 
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
@@ -110,37 +108,20 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/student/Desktop/SelfD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG styx_msgs/TrafficLightArray"
 	cd /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg
 
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/srv/ChangeTargetSpeed.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python code from SRV styx_msgs/ChangeTargetSpeed"
-	cd /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/srv/ChangeTargetSpeed.srv -Istyx_msgs:/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv
-
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py
 /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python msg __init__.py for styx_msgs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for styx_msgs"
 	cd /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg --initpy
-
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py
-/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python srv __init__.py for styx_msgs"
-	cd /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv --initpy
 
 styx_msgs_generate_messages_py: styx_msgs/CMakeFiles/styx_msgs_generate_messages_py
 styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Waypoint.py
 styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLight.py
 styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_Lane.py
 styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/_TrafficLightArray.py
-styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/_ChangeTargetSpeed.py
 styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/msg/__init__.py
-styx_msgs_generate_messages_py: /home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/lib/python2.7/dist-packages/styx_msgs/srv/__init__.py
 styx_msgs_generate_messages_py: styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build.make
 
 .PHONY : styx_msgs_generate_messages_py

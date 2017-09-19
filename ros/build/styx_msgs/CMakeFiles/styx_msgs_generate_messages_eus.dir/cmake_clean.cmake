@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/roseus/ros/styx_msgs/msg/Lane.l"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l"
-  "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/roseus/ros/styx_msgs/srv/ChangeTargetSpeed.l"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/roseus/ros/styx_msgs/manifest.l"
 )
 

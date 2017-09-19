@@ -40,8 +40,7 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <!--   Added Message generation dependency for service generation -->
-  <build_depend>message_generation</build_depend>
+
 
   <build_depend>geometry_msgs</build_depend>
   <build_depend>roscpp</build_depend>
@@ -53,8 +52,7 @@
   <run_depend>rospy</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>std_msgs</run_depend>
-  <!--   Added Message generation dependency for service generation -->
-  <run_depend>message_runtime</run_depend>
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

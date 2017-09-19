@@ -3,6 +3,6 @@ prefix=/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/install
 Name: styx
 Description: Description of styx
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/install/include
 Libs: -L/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/install/lib 
 Requires: 

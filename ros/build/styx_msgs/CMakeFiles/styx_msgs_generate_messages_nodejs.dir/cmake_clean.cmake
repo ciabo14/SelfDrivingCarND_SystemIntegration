@@ -4,7 +4,6 @@ file(REMOVE_RECURSE
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLight.js"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/gennodejs/ros/styx_msgs/msg/Lane.js"
   "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/gennodejs/ros/styx_msgs/msg/TrafficLightArray.js"
-  "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/devel/share/gennodejs/ros/styx_msgs/srv/ChangeTargetSpeed.js"
 )
 
 # Per-language clean rules from dependency scanning.

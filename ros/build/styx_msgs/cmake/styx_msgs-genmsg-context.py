@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg/TrafficLight.msg;/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg/TrafficLightArray.msg;/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg/Waypoint.msg;/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/msg/Lane.msg"
-services_str = "/home/student/Desktop/SelfDrivingCarND_SystemIntegration/ros/src/styx_msgs/srv/ChangeTargetSpeed.srv"
+services_str = ""
 pkg_name = "styx_msgs"
 dependencies_str = "geometry_msgs;sensor_msgs;std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
