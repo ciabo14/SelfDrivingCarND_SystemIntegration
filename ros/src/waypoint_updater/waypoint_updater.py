@@ -31,6 +31,8 @@ class WaypointUpdater(object):
 	def __init__(self):
 		rospy.init_node('waypoint_updater')
 		
+		self.speed = 10
+
 		service = rospy.Service('~change_Speed', ChangeTargetSpeed, self.changeTargetSpeed)
 
 		rospy.Subscriber('/current_pose', PoseStamped, self.pose_cb)
@@ -48,10 +50,13 @@ class WaypointUpdater(object):
 		self.vehicle = None
 		self.last_wp_index = -1
 
+		
 		rospy.spin()
 
 	def changeTargetSpeed(self,msg):
+		self.speed = msg.target_speed
 		return ChangeTargetSpeedResponse(True)
+
 	def pose_cb(self, msg):
 
 		#print("Reading current car pose",msg.pose.position.x,msg.pose.position.y)
@@ -116,8 +121,8 @@ class WaypointUpdater(object):
 		for i in range(1,LOOKAHEAD_WPS):
 			wp = self.track.waypoints[(self.last_wp_index+i) % len(self.track.waypoints)]
 			# set longitudinal speed
-			wp.twist.twist.linear.x = 10
-			self.vehicle.update_vehicle_speed(10)
+			wp.twist.twist.linear.x = self.speed
+			self.vehicle.update_vehicle_speed(self.speed)
 			lane.waypoints.append(wp)
 			
 	

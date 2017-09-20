@@ -15,7 +15,7 @@ class Controller(object):
 	def __init__(self, *args, **kwargs):
 		
 		# Define the 2 PIDs: one for the throttle/brake control, the second one for the steering
-		self.pid_control = PID(1, .01, .001)
+		self.pid_control = PID(3, .5, .125)
 		self.pid_steering = PID(2 ,.01, .001)
 
 		# Define the low pass filter to be applied to steering error value
@@ -69,8 +69,10 @@ class Controller(object):
 					brake = 0.0
 			
 				steer = self.pid_steering.step(steer_err, delta_t)
-				rospy.loginfo('Current PIDs target data:')
-				rospy.loginfo('SpeedCurrent -> %f, SpeedTarget --> %f, SteerCurrent -> %f, SteerTarget --> %f', current_lin_vel, target_lin_vel, current_steer, target_steer)
+				#rospy.loginfo('Current PIDs target data:')
+				#rospy.loginfo('SpeedCurrent -> %f, SpeedTarget --> %f, SteerCurrent -> %f, SteerTarget --> %f', current_lin_vel, target_lin_vel, current_steer, target_steer)
+				# USED for PID calibration
+				rospy.loginfo('%f', current_lin_vel)
 
 				self.time = current_time
 
